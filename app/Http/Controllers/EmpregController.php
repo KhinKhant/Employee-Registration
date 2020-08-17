@@ -38,11 +38,11 @@ class EmpregController extends Controller
     public function store(Request $request)
     {
         $result=$request->all();
-        //dd($result);
+       // dd($result);
+
         emp::create($result);
         //return view('empshow', compact('result'));
         return redirect()->route('reg');
-        //return view('empreg');
         //return "Register Successfully!";
         
     }
@@ -55,6 +55,7 @@ class EmpregController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -65,7 +66,13 @@ class EmpregController extends Controller
      */
     public function edit($id)
     {
-        //return view('empedit');
+        //dd($id);
+       
+     $edit= emp::find($id);
+    // dd($edit);
+         //$result=$request->all();
+        return view('empedit', compact('edit'));
+
     }
 
     /**
@@ -77,7 +84,14 @@ class EmpregController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update= emp::find($id);
+        //dd($update);
+            $update->name=request('name');
+            $update->roll=request('roll');
+            $update->phone=request('phone');
+            $update->email=request('email');
+            $update->save();
+        return redirect()->route('reg');
     }
 
     /**

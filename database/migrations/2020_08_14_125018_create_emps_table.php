@@ -16,7 +16,7 @@ class CreateEmpsTable extends Migration
         Schema::create('emps', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('position');
+            $table->string('roll');
             $table->string('email');
             $table->integer('phone');
             $table->timestamps();

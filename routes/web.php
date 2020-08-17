@@ -22,10 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/see', function(){
 	return view('empreg');
 });
-Route::Resource('/reg', 'EmpregController');
+
 Route::resource('/reg', 'EmpregController', [
-	'$names'=> ['index' => 'reg',
+	'names'=> ['index' => 'reg',
 			'store' => 'reg.store',
-			'edit' => 'reg.edit'
+			'edit' => 'reg.edit',
+			'update' => 'reg.update'
 	]
 ]);

@@ -35,13 +35,15 @@
                     <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone number">
                  </div>
 
-                 <div class="form-group">
-                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email">
-                 </div>
-
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                
+ 
         <button type="submit" class="btn btn-primary btn-sm" class="text-success">Register</button>
-        
+         <button type="submit" class="btn btn-primary btn-sm" class="text-success">Edit</button>
         <button type="Reset" class="btn btn-primary btn-sm" class="text-success">Cancel</button>
         </form>
         </div>

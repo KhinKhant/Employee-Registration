@@ -12,28 +12,30 @@
 <section>
     <div class="container">
         <div class="col-sm-6">
-            <form method="post" action="{{url('emp')}}">
+            <form method="post" action="{{route('reg.update',$edit->id)}}">
                 @csrf
+                @method('PUT')
            <h4 class="text-success">Edit Form<br></h4>
                  <div class="form-group">
                      <label for="name">Name</label>
-                    <input type="name" class="form-control" name="name" id="name" placeholder="Enter Name">
+                    <input type="name" class="form-control" name="name" id="name" placeholder="Enter Name" value="{{$edit->name}}">
                  </div>
 
                   <div class="form-group">
                      <label for="positon: ">Position</label>
-                    <input type="text" class="form-control" name="roll" id="roll" placeholder="Enter Position">
+                    <input type="text" class="form-control" name="roll" id="roll" placeholder="Enter Position" value="{{$edit->roll}}">
                  </div>
                  
                  <div class="form-group">
                      <label for="text">Phone</label>
-                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone number">
+                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone number"  value="{{$edit->phone}}">
                  </div>
 
                  <div class="form-group">
-                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter Email">
-                 </div>
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email"  value="{{$edit->email}}">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
 
         <button type="submit" class="btn btn-primary btn-sm" class="text-success">Update</button>
         
